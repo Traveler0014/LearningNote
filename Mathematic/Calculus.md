@@ -8,7 +8,7 @@
 
 集合与集合运算得到另一个集合.
 $$
-A\oplus B=C
+A \oplus B=C
 $$
 目的在于判别参与运算各集合中的元素是否属于运算结果.
 
@@ -22,25 +22,25 @@ $$
 
 交: 同时属于两个集合的元素.
 $$
-a \in A \and a \in B\\
+a \in A \and a \in B \\
 \to
 a \in C
 $$
 差: 只属于其中一个集合的元素.
 $$
-a \in A \and a \notin B\\
+a \in A \and a \notin B \\
 \to
 a \in C
 $$
 并: 属于其中任意一个集合的元素.
 $$
-a \in A \or a \in B\\
+a \in A \or a \in B \\
 \to
 a \in C
 $$
 补: 不属于某个集合的元素.
 $$
-a \notin A\\
+a \notin A \\
 \to
 a \in C
 $$
@@ -119,7 +119,7 @@ $$
 
 #### 柯西收敛原理
 
-数列$\{a_n\}$收敛的充要条件为: 对任给$\epsilon>0$, 存在正整数$N$, 使得对所有满足$m>N, n>N$的$m, n$有$|a_m-a_n|<\epsilon$. 
+数列$\{a_n\}$收敛的充要条件为: 对任给$\varepsilon>0$, 存在正整数$N$, 使得对所有满足$m>N, n>N$的$m, n$有$|a_m-a_n|<\varepsilon$. 
 
 ## 级数
 
@@ -138,18 +138,58 @@ $$
 正负项交错出现的级数.
 $$
 \sum\limits_{n=1}^{\infty}(-1)^{n-1}a_n\\
-a_n>0,n\in\mathbb{N}^{+}
+a_n>0,n\in\Bbb{N}^{+}
 $$
+
+##### 莱布尼兹判别法
+
+
 
 #### 变号级数
 
 符号会发生改变的级数.
 $$
 \sum\limits_{n=1}^{\infty}a_n\\
-a_n \in \mathbb{R}
+a_n \in \Bbb{R}
+$$
+
+若其对应的正项级数$\sum\limits_{n=1}^{\infty}|a_{n}|$**通过比值或根值判别法判断发散**, 则原级数发散. 
+
+若正项级数收敛, 则原级数必收敛. 
+
+若正项级数发散而原级数收敛, 则称该变号级数**条件收敛**. 若正项级数和原级数同时收敛, 则称该变号级数**绝对收敛**. 
+
+### 性质
+
+#### 可交换性
+
+绝对收敛的级数交换其前后项的位置, 结果仍绝对收敛. 
+
+#### 乘法
+
+两个绝对收敛的级数其各项乘积所得级数和$\sum\limits_{i,j=1}^{\infty}a_{i}b_{j}$仍绝对收敛, 且和等于原级数收敛和的乘积. 
+
+##### 柯西乘积
+
+在绝对收敛的条件下,有
+$$
+\sum\limits_{n=1}^{\infty}a_{n} \cdot \sum\limits_{n=1}^{\infty}b_{n} = \sum\limits_{n=1}^{\infty}(a_{n}b_{1}+a_{n-1}b_{2}+...+a_{1}b_{n})
+$$
+**应用**:
+
+已知$q<1$时, 几何乘积$\sum\limits_{n=0}^{\infty}q^{n}$绝对收敛.
+
+则有: 
+$$
+\sum\limits_{n=0}^{\infty}q^{n} \cdot \sum\limits_{n=0}^{\infty}q^{n} = \sum\limits_{n=0}^{\infty}(n+1)q^{n} \\
+\because \sum\limits_{n=0}^{\infty}q^{n} = \frac{1}{1-q} \\
+\therefore \frac{1}{(1-q)^{2}} = \sum\limits_{n=0}^{\infty}(n+1)q^{n}
 $$
 
 
+### 敛散性判别
+
+#### 柯西收敛原理
 
 
 
@@ -160,5 +200,5 @@ $$
 > ||a|-|b||\leq|a\pm b|\leq|a|+|b|
 > $$
 
-三角形两边之差小于等于第三边, 两边之和大于等于第三边（等号成立时, 三边共线）. 
+三角形两边之差小于等于第三边, 两边之和大于等于第三边(等号成立时, 三边共线). 
 
