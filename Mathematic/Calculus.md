@@ -18,60 +18,122 @@ $$
 >
 > $U$: 全集
 >
-> $\Phi$: 补集
+> $\varnothing$: 空集
 
 交: 同时属于两个集合的元素.
 $$
+A \cap B = C\\
 a \in A \and a \in B \\
 \to
 a \in C
 $$
-差: 只属于其中一个集合的元素.
+差: 只属于算符左侧集合的元素.
 $$
-a \in A \and a \notin B \\
+A - B = C\\
+a \in A \and a \notin B\\
+\to
+a \in C
+$$
+对称差: 只属于其中一个集合的元素. 
+$$
+A \oplus B = (A - B) + (B - A) = C\\
+(a \in A \and a \notin B) \or  (a \notin A \and a \in B)\\
 \to
 a \in C
 $$
 并: 属于其中任意一个集合的元素.
 $$
+A \cup B \\
 a \in A \or a \in B \\
 \to
 a \in C
 $$
 补: 不属于某个集合的元素.
 $$
-a \notin A \\
+\overline{A} = U - A = C \\
+a \notin A \and a \in U \\
 \to
 a \in C
+$$
+
+#### 等幂律
+
+$$
+A \cap A = A \\
+A \cup A = A
 $$
 
 #### 交换律
 
 $$
+A \cap B = B \cap A \\
+A \cup B = B \cup A \\
 A \oplus B = B \oplus A
 $$
-
-
 
 #### 结合律
 
 $$
+A \cap (B \cap C) = (A \cap B) \cap C \\
+A \cup (B \cup C) = (A \cup B) \cup C \\
 A \oplus (B \oplus C) = (A \oplus B) \oplus C
 $$
 
+#### 分配律
 
+$$
+A \cap (B \cup C) = (A \cap B) \cup (A \cap C) \\
+A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+$$
 
 #### 同一律
 
 $$
-A \oplus 
+A \cap U = A \\
+A \cup \varnothing = A \\
+A - \varnothing = A \\
+A \oplus \varnothing = A
 $$
-
-
 
 #### 零一律
 
-#### 其他律
+$$
+A \cap \varnothing = \varnothing \\
+A \cup U = U
+$$
+
+#### 补余律
+
+$$
+A \cap \overline{A} = \varnothing \\
+A \cup \overline{A} = U
+$$
+
+#### 吸收律
+
+$$
+A \cup (A \cap B) = A \\
+A \cap (A \cup B) = A
+$$
+
+#### De Morgan律
+
+$$
+A - (B \cup C) = (A - B) \cap (A - C) \\
+A - (B \cap C) = (A - B) \cup (A - C) \\
+\overline{A \cup B} = \overline{A} \cap \overline{B} \\
+\overline{A \cap B} = \overline{A} \cup \overline{B} \\
+\overline{\varnothing} = U \\
+\overline{U} = \varnothing
+$$
+
+#### 双重否定律
+
+$$
+\overline{\overline{A}} = A
+$$
+
+
 
 ## 映射
 
@@ -186,15 +248,26 @@ $$
 \therefore \frac{1}{(1-q)^{2}} = \sum\limits_{n=0}^{\infty}(n+1)q^{n}
 $$
 
-
 ### 敛散性判别
+
+**收敛必要条件**: 级数通项极限为零. 
+
+#### 一般性流程
+
+1. 判断通项极限是否为零, 若不为零, 级数发散.
+2. 判断是否为正项级数, 若为正项级数, 采用**比较判别法**(不等式与极限形式), **根值判别法**, **比值判别法**判断敛散性. 
+3. 判断是否为交错级数$\sum(-1)^{n-1}u_{n}$, 若$u_{n}$单调下降, 则原级数收敛. 
+4. 利用级数运算性质和其他判别法. 
 
 #### 柯西收敛原理
 
 
 
+---
 
-### 三角不等式: 
+## 附录
+
+### 三角不等式:
 
 > $$
 > ||a|-|b||\leq|a\pm b|\leq|a|+|b|
